@@ -335,6 +335,7 @@ namespace DataStructures.LinkedLists
         }
 
         // сортировка ascending=true  - по возрастанию, ascending=false - по убыванию
+
         public void Sort(bool ascending = true)
         {
             Node tail = _root;
@@ -381,6 +382,67 @@ namespace DataStructures.LinkedLists
                 }
             }
         }
+
+        // удаление по значению первого
+        public void DeleteFirstByValue(int value)
+        {
+            if(_root == null)
+            {
+                throw new InvalidOperationException();
+            }
+            if(_root.Value == value)
+            {
+                _root = _root.Next;
+                Length--;
+                return;
+            }
+
+            Node tmp = _root;
+            while(tmp.Next != null)
+            {
+                if(tmp.Next.Value == value)
+                {
+                    tmp.Next = tmp.Next.Next;
+                    Length--;
+                    return;
+                }
+                tmp = tmp.Next;
+            }
+            throw new ArgumentOutOfRangeException("The value is not present in the list");
+        }
+
+        // удаление по значению всех
+        public void DeleteAllByValue(int value)
+        {
+            if (_root == null)
+            {
+                throw new InvalidOperationException();
+            }
+
+            while(_root.Value == value)
+            {
+                _root = _root.Next;
+                Length--;
+                if (_root == null)
+                {
+                    return;
+                }
+            }
+
+            Node tmp = _root;
+            while (tmp.Next != null)
+            {
+                if (tmp.Next.Value == value)
+                {
+                    tmp.Next = tmp.Next.Next;
+                    Length--;
+                }
+                tmp = tmp.Next;
+            }
+
+            throw new ArgumentOutOfRangeException("The value is not present in the list");
+        }
+
 
         private Node Get(int n)
         {

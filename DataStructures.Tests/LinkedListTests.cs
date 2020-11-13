@@ -228,21 +228,61 @@ namespace DataStructures.Tests
             Assert.Throws<NullReferenceException>(() => list.GetMinIndex());
         }
 
-        [TestCase(new int[] { 1, 2, 3, 4, 5, 7 }, new int[] { 5, 4, 2, 3, 1, 7})]
-        [TestCase(new int[] { 1, 2, 3, 4, 5, 7 }, new int[] { 2, 4, 5, 3, 7, 1 })]
-        [TestCase(new int[] { 1, 2, 3, 4, 5, 7 }, new int[] { 4, 2, 5, 1, 7, 3 })]
-        [TestCase(new int[] { 1, 1, 2, 3, 4 }, new int[] { 1, 2, 1, 3,4 })]
-        [TestCase(new int[] { 1 }, new int[] { 1 })]
-        [TestCase(new int[] { }, new int[] { })]
 
-        public void SortAscendingTest(int[] expectedArray, int[] array)
+        // сортировка по возрастанию
+        [TestCase(new int[] { 1, 2, 3, 4, 5, 7 }, new int[] { 5, 4, 2, 3, 1, 7}, true)]
+        [TestCase(new int[] { 1, 2, 3, 4, 5, 7 }, new int[] { 2, 4, 5, 3, 7, 1 }, true)]
+        [TestCase(new int[] { 1, 2, 3, 4, 5, 7 }, new int[] { 4, 2, 5, 1, 7, 3 }, true)]
+        [TestCase(new int[] { 1, 1, 2, 3, 4 }, new int[] { 1, 2, 1, 3,4 }, true)]
+        [TestCase(new int[] { 1 }, new int[] { 1 }, true)]
+        [TestCase(new int[] { }, new int[] { }, true)]
+
+        // по убыванию
+        [TestCase(new int[] { 7, 5, 4, 3, 2, 1 }, new int[] { 5, 4, 2, 3, 1, 7 }, false)]
+        [TestCase(new int[] { 7, 5, 4, 3, 2, 1 }, new int[] { 2, 4, 5, 3, 7, 1 }, false)]
+        [TestCase(new int[] { 7, 5, 4, 3, 2, 1 }, new int[] { 4, 2, 5, 1, 7, 3 }, false)]
+        [TestCase(new int[] { 4, 3, 2, 1, 1 }, new int[] { 1, 2, 1, 3, 4 }, false)]
+        [TestCase(new int[] { 1 }, new int[] { 1 }, false)]
+        [TestCase(new int[] { }, new int[] { }, false)]
+
+        public void SortTest(int[] expectedArray, int[] array, bool ascending)
         {
             LinkedList actual = new LinkedList(array);
             LinkedList expected = new LinkedList(expectedArray);
 
-            actual.Sort();
+            actual.Sort(ascending);
             Assert.AreEqual(expected, actual);
         }
 
+        // удаление по значению первого
+        //[TestCase(new int[] { 5, 4, 3, 1, 7 }, new int[] { 5, 4, 4, 3, 1, 7 }, 4)]
+        //[TestCase(new int[] { 2, 1, 3, 4 }, new int[] { 1, 2, 1, 3, 4 }, 1)]
+        //[TestCase(new int[] { 1, 2, 1, 3 }, new int[] { 1, 2, 1, 3, 4 }, 4)]
+        //[TestCase(new int[] { }, new int[] { 1 }, 1)]
+
+        public void DeleteFirstByValueTest(int[] expectedArray, int[] array, int value)
+        {
+            LinkedList actual = new LinkedList(array);
+            LinkedList expected = new LinkedList(expectedArray);
+
+            actual.DeleteFirstByValue(value);
+            Assert.AreEqual(expected, actual);
+        }
+
+        /*
+        // удаление по значению всех
+        [TestCase(new int[] { 5, 3, 1, 7 }, new int[] { 5, 4, 4, 3, 1, 7 }, 4)]
+        [TestCase(new int[] { 2, 3, 4 }, new int[] { 1, 2, 1, 1, 1, 3, 4 }, 1)]
+        [TestCase(new int[] { 2, 3, 4 }, new int[] { 1, 2, 1, 3, 4, 1}, 1)]
+        [TestCase(new int[] { }, new int[] { 1, 1, 1 }, 1)]
+
+        public void DeleteAllByValueTest(int[] expectedArray, int[] array, int value)
+        {
+            LinkedList actual = new LinkedList(array);
+            LinkedList expected = new LinkedList(expectedArray);
+
+            actual.DeleteAllByValue(value);
+            Assert.AreEqual(expected, actual);
+        }*/
     }
 }

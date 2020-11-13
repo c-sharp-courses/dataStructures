@@ -1,31 +1,30 @@
 {
   "format": 1,
   "restore": {
-    "D:\\проекты\\data-structures-master\\DataStructures\\DataStructures.csproj": {}
+    "/Users/MirosLove/dataStructures/DataStructures/DataStructures.csproj": {}
   },
   "projects": {
-    "D:\\проекты\\data-structures-master\\DataStructures\\DataStructures.csproj": {
+    "/Users/MirosLove/dataStructures/DataStructures/DataStructures.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\проекты\\data-structures-master\\DataStructures\\DataStructures.csproj",
+        "projectUniqueName": "/Users/MirosLove/dataStructures/DataStructures/DataStructures.csproj",
         "projectName": "DataStructures",
-        "projectPath": "D:\\проекты\\data-structures-master\\DataStructures\\DataStructures.csproj",
-        "packagesPath": "C:\\Users\\vanci\\.nuget\\packages\\",
-        "outputPath": "D:\\проекты\\data-structures-master\\DataStructures\\obj\\",
+        "projectPath": "/Users/MirosLove/dataStructures/DataStructures/DataStructures.csproj",
+        "packagesPath": "/Users/MirosLove/.nuget/packages/",
+        "outputPath": "/Users/MirosLove/dataStructures/DataStructures/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\vanci\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/MirosLove/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -37,6 +36,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "imports": [
             "net461",
             "net462",
@@ -52,7 +52,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.100/RuntimeIdentifierGraph.json"
         }
       }
     }

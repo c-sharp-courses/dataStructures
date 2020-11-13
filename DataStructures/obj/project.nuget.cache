@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "XB1fAvE4e5jzHx3TeS/V5fQ+RKywqeUBL0KSK/8OPCRghMMSO+xVOP7JfGnXAYGcoso9U4zeLn+dM2/E3v33jQ==",
+  "dgSpecHash": "o7LtF9L6Gxvd71xBXFv7gLi2SB+Mr05FbwaSn6FWHXl16pSnYIM0y2lS8w5/hV+Tfj9ZicRlKudFADjdBOo5wg==",
   "success": true,
-  "projectFilePath": "D:\\проекты\\data-structures-master\\DataStructures\\DataStructures.csproj",
+  "projectFilePath": "/Users/MirosLove/dataStructures/DataStructures/DataStructures.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
