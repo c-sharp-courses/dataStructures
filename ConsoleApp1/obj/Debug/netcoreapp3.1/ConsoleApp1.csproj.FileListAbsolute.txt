@@ -1,0 +1,16 @@
+D:\проекты\data-structures-master\ConsoleApp1\bin\Debug\netcoreapp3.1\ConsoleApp1.exe
+D:\проекты\data-structures-master\ConsoleApp1\bin\Debug\netcoreapp3.1\ConsoleApp1.deps.json
+D:\проекты\data-structures-master\ConsoleApp1\bin\Debug\netcoreapp3.1\ConsoleApp1.runtimeconfig.json
+D:\проекты\data-structures-master\ConsoleApp1\bin\Debug\netcoreapp3.1\ConsoleApp1.runtimeconfig.dev.json
+D:\проекты\data-structures-master\ConsoleApp1\bin\Debug\netcoreapp3.1\ConsoleApp1.dll
+D:\проекты\data-structures-master\ConsoleApp1\bin\Debug\netcoreapp3.1\ConsoleApp1.pdb
+D:\проекты\data-structures-master\ConsoleApp1\bin\Debug\netcoreapp3.1\DataStructures.dll
+D:\проекты\data-structures-master\ConsoleApp1\bin\Debug\netcoreapp3.1\DataStructures.pdb
+D:\проекты\data-structures-master\ConsoleApp1\obj\Debug\netcoreapp3.1\ConsoleApp1.csprojAssemblyReference.cache
+D:\проекты\data-structures-master\ConsoleApp1\obj\Debug\netcoreapp3.1\ConsoleApp1.csproj.CoreCompileInputs.cache
+D:\проекты\data-structures-master\ConsoleApp1\obj\Debug\netcoreapp3.1\ConsoleApp1.AssemblyInfoInputs.cache
+D:\проекты\data-structures-master\ConsoleApp1\obj\Debug\netcoreapp3.1\ConsoleApp1.AssemblyInfo.cs
+D:\проекты\data-structures-master\ConsoleApp1\obj\Debug\netcoreapp3.1\ConsoleApp1.csproj.CopyComplete
+D:\проекты\data-structures-master\ConsoleApp1\obj\Debug\netcoreapp3.1\ConsoleApp1.dll
+D:\проекты\data-structures-master\ConsoleApp1\obj\Debug\netcoreapp3.1\ConsoleApp1.pdb
+D:\проекты\data-structures-master\ConsoleApp1\obj\Debug\netcoreapp3.1\ConsoleApp1.genruntimeconfig.cache
