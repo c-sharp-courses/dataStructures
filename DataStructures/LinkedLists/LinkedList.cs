@@ -335,6 +335,7 @@ namespace DataStructures.LinkedLists
         }
 
         // сортировка ascending=true  - по возрастанию, ascending=false - по убыванию
+
         public void Sort(bool ascending = true)
         {
             Node tail = _root;
@@ -382,9 +383,165 @@ namespace DataStructures.LinkedLists
             }
         }
 
+        // удаление по значению первого
+        public void DeleteFirstByValue(int value)
+        {
+            if(_root == null)
+            {
+                throw new InvalidOperationException();
+            }
+            if(_root.Value == value)
+            {
+                _root = _root.Next;
+                Length--;
+                return;
+            }
+
+            Node tmp = _root;
+            while(tmp.Next != null)
+            {
+                if(tmp.Next.Value == value)
+                {
+                    tmp.Next = tmp.Next.Next;
+                    Length--;
+                    return;
+                }
+                tmp = tmp.Next;
+            }
+            throw new ArgumentOutOfRangeException("The value is not present in the list");
+        }
+
+        // удаление по значению всех
+        public void DeleteAllByValue(int value)
+        {
+            if (_root == null) throw new InvalidOperationException();
+
+            bool isPresent = false;
+
+            while(_root.Value == value)
+            {
+                _root = _root.Next;
+                Length--;
+                if (_root == null) return;
+            }
+
+            Node tmp = _root;
+            while (tmp.Next != null)
+            {
+                while(tmp.Next.Value == value)
+                {
+                    isPresent = true;
+                    tmp.Next = tmp.Next.Next;
+                    Length--;
+                    if (tmp.Next == null) return;
+                }
+                tmp = tmp.Next;
+            }
+
+            if(!isPresent)
+                throw new ArgumentOutOfRangeException("The value is not present in the list");
+        }
+
+        // добавление массива в конец
+
+        public void Append(int[] values)
+        {
+            LinkedList appendedList = new LinkedList(values);
+
+            if (Length == 0)
+            {
+                _root = appendedList._root;
+            }
+            else
+            {
+                Node last = Get(Length - 1);
+                last.Next = appendedList._root;
+            }
+            Length += values.Length;
+        }
+
+        // добавление массива в начало
+
+        public void Push(int[] values)
+        {
+            if(values.Length != 0)
+            {
+                LinkedList pushedList = new LinkedList(values);
+                Node last = pushedList.Get(values.Length - 1);
+                last.Next = _root;
+                _root = pushedList._root;
+                Length += values.Length;
+            }
+            
+        }
+
+        // добавление массива по индексу
+
+        public void Insert(int[] values, int index)
+        {
+            if(values.Length == 0)
+            {
+                return;
+            }
+            if (index < 0 || index > Length)
+            {
+                throw new ArgumentOutOfRangeException();
+            }
+            if (index == 0)
+            {
+                Push(values);
+            }
+            else
+            {
+                LinkedList inserted = new LinkedList(values);
+                Node previous = Get(index - 1);
+                Node lastInserted = inserted.Get(values.Length - 1);
+                lastInserted.Next = previous.Next;
+                previous.Next = inserted._root;
+                Length += values.Length;
+            }
+        }
+
+        public void DeleteLast(int N)
+        {
+            if(Length < N)
+            {
+                throw new ArgumentOutOfRangeException("N must not be more than length");
+            }
+            if(Length == N)
+            {
+                _root = null;
+                Length = 0;
+            }
+            else
+            {
+                Node newLast = Get(Length - N - 1);
+                newLast.Next = null;
+                Length -= N;
+            }
+        }
+
+        public void Delete(int N, int index)
+        {
+            if (N <= 0 || index < 0) throw new ArgumentOutOfRangeException("Must be positive");
+
+            if (index + N > Length) throw new ArgumentOutOfRangeException();
+
+            if (index == 0)
+            {
+                _root = Get(N);
+            }
+            else
+            {
+                Node beforeIndex = Get(index - 1);
+                beforeIndex.Next = Get(index + N);
+            }
+            Length -= N;
+        }
+
         private Node Get(int n)
         {
-            if(Length <= n || n < 0)
+            if(Length < n || n < 0)
             {
                 throw new ArgumentOutOfRangeException();
             }

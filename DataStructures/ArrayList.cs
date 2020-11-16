@@ -396,6 +396,7 @@ namespace DataStructures
 
             Length -= N;
         }
+
         
         public int this[int i]
         {
